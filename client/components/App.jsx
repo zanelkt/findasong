@@ -43,14 +43,17 @@ class App extends React.Component {
 
         <h3>{this.state.artistDataArray[0].artist.name}:</h3>
 
-          {this.state.artistDataArray.map(songlist => {
-            {var videoUrl = 'https://www.youtube.com/results?search_query=' + songlist.title}
-            {var lyricsUrl = 'https://www.lyrics.com/lyrics/' + songlist.title}
-
-            return (
-            <li key={songlist.id}><span>{songlist.title} </span><a target="_blank" href={videoUrl}> Video </a><a target="_blank"  href={lyricsUrl}> Lyrics</a></li>
-          )
-          })}
+        {this.state.artistDataArray.map(songlist => {
+          {var videoUrl = 'https://www.youtube.com/results?search_query=' + songlist.title}
+          {var lyricsUrl = 'https://www.lyrics.com/lyrics/' + songlist.title}
+          return (
+          <li key={songlist.id}>
+            <span>{songlist.title}</span>
+            <a target="_blank" href={videoUrl}> Video</a>
+            <a target="_blank"  href={lyricsUrl}> Lyrics</a>
+          </li>
+        )
+        })}
         </ul>}
       </div>
     )
