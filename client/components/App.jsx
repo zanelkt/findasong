@@ -1,8 +1,7 @@
 import React from 'react'
 import {getArtistDataFunc} from '../songApiReq'
-import {HashRouter as Router, Route} from'react-router-dom'
-import Footer from './Footer'
-import LandingPage from './LandingPage'
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -60,13 +59,15 @@ class App extends React.Component {
           {var lyricsUrl = 'https://genius.com/search?q=' + songlist.title}
           {var tabUrl = 'https://www.ultimate-guitar.com/search.php?search_type=title&value=' + songlist.title}
           {var wikiUrl = 'https://en.wikipedia.org/wiki/' + songlist.title}
+          {var allMusicUrl = 'https://www.allmusic.com/search/all/' + songlist.title}
           return (
           <li key={songlist.id}>
             <span>{songlist.title}</span>
-            <a target="_blank" href={videoUrl}> Video</a>
-            <a target="_blank" href={lyricsUrl}> Lyrics</a>
-            <a target="_blank" href={tabUrl}> Tab</a>
-            <a target="_blank" href={wikiUrl}> Wiki</a>
+            <a target="_blank" href={videoUrl}>Video</a>
+            <a target="_blank" href={lyricsUrl}>Lyrics</a>
+            <a target="_blank" href={tabUrl}>Tab</a>
+            <a target="_blank" href={wikiUrl}>Wiki</a>
+            <a target="_blank" href={allMusicUrl}>In-Depth</a>
           </li>
         )
         })}
