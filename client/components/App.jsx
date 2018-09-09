@@ -43,7 +43,9 @@ class App extends React.Component {
     return (
       <div>
 
-        <div className = 'app'><h2>Find A Song</h2></div>
+        <div className = 'title'><h2>Find A Song</h2></div>
+
+       <div className = 'body'>
 
         <ul style={{listStyle: 'none'}}>
         {console.log(this.state.artistDataArray)}
@@ -51,28 +53,35 @@ class App extends React.Component {
           <input value={this.state.artistToBeSearched} onChange={this.updateInputValue.bind(this)}/>
           <input type="submit" value="Get Songs"/>
         </form>
+        
+        <br></br>
 
-        {this.state.artistDataArray.length == true && <h3>{this.state.artistDataArray[0].artist.name}:</h3>}
+        {this.state.artistDataArray.length == true && <h4>{this.state.artistDataArray[0].artist.name}:</h4>}
 
         {this.state.artistDataArray.map(songlist => {
           {var videoUrl = 'https://www.youtube.com/results?search_query=' + songlist.title}
           {var lyricsUrl = 'https://genius.com/search?q=' + songlist.title}
-          {var tabUrl = 'https://www.ultimate-guitar.com/search.php?search_type=title&value=' + songlist.title}
+          {var tabUrl = 'https://www.songsterr.com/a/wa/search?pattern=' + songlist.title}
           {var wikiUrl = 'https://en.wikipedia.org/wiki/' + songlist.title}
-          {var allMusicUrl = 'https://www.allmusic.com/search/all/' + songlist.title}
+          {var discogsUrl = 'https://www.discogs.com/search/?q=' + songlist.title}
           return (
           <li key={songlist.id}>
             <span>{songlist.title}</span>
-            <a target="_blank" href={videoUrl}>Video</a>
-            <a target="_blank" href={lyricsUrl}>Lyrics</a>
-            <a target="_blank" href={tabUrl}>Tab</a>
-            <a target="_blank" href={wikiUrl}>Wiki</a>
-            <a target="_blank" href={allMusicUrl}>In-Depth</a>
+            <a target="_blank" href={videoUrl}>   Video</a>
+            <a target="_blank" href={lyricsUrl}>   Lyrics</a>
+            <a target="_blank" href={tabUrl}>   Tab</a>
+            <a target="_blank" href={wikiUrl}>   Wiki</a>
+            <a target="_blank" href={discogsUrl}>   Discogs</a>
           </li>
         )
         })}
         </ul>
-      </div>
+
+        </div>
+        </div> 
+
+        
+     
     )
   }
 }

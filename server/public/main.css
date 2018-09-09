@@ -1,7 +1,16 @@
 
-.app {
+.title {
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
-    position: center;
+    text-align: center;
+    
+}
+
+    
+
+.body {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
