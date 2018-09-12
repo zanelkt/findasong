@@ -1,5 +1,6 @@
 import React from 'react'
 import {getArtistDataFunc} from '../songApiReq'
+import Footer from './Footer'
 
 
 
@@ -33,26 +34,33 @@ class App extends React.Component {
     });
     this.getArtistData(evt.target.value)
   }
-  submit(e) {
-    e.preventDefault()
+  
+  submit(event) { 
+    event.preventDefault()
     this.getArtistData(this.state.artistToBeSearched)
   }
 
 
   render() {
     return (
-      <div>
+      
+      <div className = 'main'>
 
         <div className = 'title'><h2>Find A Song</h2></div>
 
-       <div className = 'body'>
+       <div className = 'footer'><Footer/></div>
 
         <ul style={{listStyle: 'none'}}>
         {console.log(this.state.artistDataArray)}
+        
+        <div className = 'form'>
+
         <form onSubmit={this.submit.bind(this)}>  
           <input value={this.state.artistToBeSearched} onChange={this.updateInputValue.bind(this)}/>
-          <input type="submit" value="Get Songs"/>
+          <input type="submit" value="Find"/>
         </form>
+
+        </div>
         
         <br></br>
 
@@ -77,10 +85,18 @@ class App extends React.Component {
         })}
         </ul>
 
-        </div>
-        </div> 
+       
 
         
+                        
+         
+
+        </div>
+
+        
+       
+
+      
      
     )
   }
