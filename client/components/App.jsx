@@ -48,7 +48,7 @@ class App extends React.Component {
 
         <div className = 'title'><h2>Find A Song</h2></div>
 
-       <div className = 'footer'><Footer/></div>
+       {/* <div className = 'footer'><Footer/></div> */}
 
         <ul style={{listStyle: 'none'}}>
         {console.log(this.state.artistDataArray)}
